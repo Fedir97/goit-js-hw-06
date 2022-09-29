@@ -13,7 +13,7 @@ function onForSubmit(event){
 alert("error")
       }
     else{
-        console.log(value,name)
+        console.log(formData);
         formEl.reset();
     }
     });
