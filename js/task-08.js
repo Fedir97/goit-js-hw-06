@@ -5,18 +5,16 @@ formEl.addEventListener("submit", onForSubmit)
 
 function onForSubmit(event){
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const {email, password}= event.currentTarget.elements;
   
 
-    formData.forEach((value, name) => {
-      if(value === ""){
-alert("error")
-      }
-    else{
-        console.log(formData);
-        formEl.reset();
-    }
-    });
+    if (email.value === '' || password.value === '') {
+      return alert('error')
+  }
+  const userDetails = { email: email.value, Password: password.value }
+  
+  console.log(userDetails)
+  event.currentTarget.reset()
     
  
 } 
